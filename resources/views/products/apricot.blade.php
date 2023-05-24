@@ -31,9 +31,9 @@
             <span></span>
         </label>
         <ul class="menu_green__box">
-            <li><a class="menu_green__item" href="store.html">Магазин</a></li>
+            <li><a class="menu_green__item" href="store">Магазин</a></li>
             <li><a class="menu_green__item" href="#">Контакти</a></li>
-            <li><a class="menu_green__item" href="why.html">Чому ми?</a></li>
+            <li><a class="menu_green__item" href="why">Чому ми?</a></li>
             <li><a class="menu_green__item" href="#">Обране</a></li>
             <li><a class="menu_green__item" href="#">Кошик</a></li>
         </ul>
@@ -53,9 +53,9 @@
     <nav class="menu-2_green">
         <ul>
             <li class = "logo-in-menu_green"><img src="logogreen.png" width = "220px" height="80px"></li>
-            <li><a href="store.html">Магазин</a></li>
+            <li><a href="store">Магазин</a></li>
             <li><a href="#">Контакти</a></li>
-            <li><a href="why.html">Чому ми?</a></li>
+            <li><a href="why">Чому ми?</a></li>
             <li class="menu-icons"><img src="heartG.svg"></li>
             <li class="menu-icons"><img src="bagG.svg"></li>
         </ul>
@@ -83,7 +83,7 @@
 
     <div class="opis">
         <h2>ОПИС</h2>
-        <p >Хто ж не любить абрикосовий джем? Він не лише має неймовірний смак, але й зміцнює імунітет, підтримує функцію кровотворення,  покращує зір та стан шкіри. Не кажучи вже про те, що таке частування прекрасно смакує з млинцями, печивом та іншими кондитерськими виробами. Абрикосовий джем вдало прикрасить ваші улюблені страви і подарує справжнє задоволення та чудовий настрій вам та вашій родині.<p>
+        <p >Хто ж не любить абрикосовий джем? Він не лише має неймовірний смак, але й зміцнює імунітет, підтримує функцію кровотворення,  покращує зір та стан шкіри. Не кажучи вже про те, що таке частування прекрасно смакує з млинцями, печивом та іншими кондитерськими виробами. Абрикосовий джем вдало прикрасить ваші улюблені страви і подарує справжнє задоволення та чудовий настрій вам та вашій родині.</p>
     </div>
 
 
@@ -193,26 +193,27 @@
                 <div class="col2">
                     <h4>Смаки</h4>
                     <ul>
-                        <li><a href="lemon.html">Лимон</a></li>
-                        <li><a href="apricot.html">Абрикос</a></li>
-                        <li><a href="peach.html">Персик</a></li>
-                        <li><a href="apple.html#">Яблуко</a></li>
-                        <li><a href="pumpkin.html">Гарбуз</a></li>
-                        <li><a href="blue.html">Чорниця</a></li>
-                        <li><a href="rasp.html">Малина</a></li>
-                        <li><a href="mand.html">Мандарин</a></li>
-                        <li><a href="pear.html">Груша</a></li>
-                        <li><a href="aiva.html">Айва</a></li>
-                        <li><a href="plum.html">Слива</a></li>
+                        <li><a href="lemon">Лимон</a></li>
+                        <li><a href="apricot">Абрикос</a></li>
+                        <li><a href="peach">Персик</a></li>
+                        <li><a href="apple">Яблуко</a></li>
+                        <li><a href="pumpkin">Гарбуз</a></li>
+                        <li><a href="blueberry">Чорниця</a></li>
+                        <li><a href="raspberry">Малина</a></li>
+                        <li><a href="mandarin">Мандарин</a></li>
+                        <li><a href="pear">Груша</a></li>
+                        <li><a href="aiva">Айва</a></li>
+                        <li><a href="plum">Слива</a></li>
                     </ul>
                 </div>
                 <div class="col3">
                     <h4 >Інформація</h4>
                     <ul>
-                        <li><a href="index.html">Про нас</a></li>
-                        <li><a href="contacts.html">Фізичний магазин</a></li>
-                        <li><a href="why.html">Переваги</a></li>
-                        <li><a href="contacts.html">Контакти</a></li>
+                        <a href="{{ route('home') }}">Про нас</a>
+                        <li><a href="contacts">Фізичний магазин</a></li>
+                        <li><a href="why">Переваги</a></li>
+                        <li><a href="contacts">Контакти</a></li>
+
                     </ul>
                 </div>
                 <div class="col4">

@@ -68,13 +68,11 @@
             <a href="#" class="button_add">ДОДАТИ ДО КОШИКА</a>
             <div class="tovar_rating-p">
                 <div class="tovar_rating">
-                    <span class="star">&#9733;</span>
-                    <span class="star">&#9733;</span>
-                    <span class="star">&#9733;</span>
-                    <span class="star">&#9733;</span>
-                    <span class="star">&#9733;</span>
+                    <span class="average-rating"><?php echo $average_rating; ?> </span>
+                    <span class="rating-stars"><?php echo $stars; ?></span>
+
                 </div>
-                <p>Відгуки: 0</p>
+                <p>Відгуки: <?php echo $total_reviews; ?></p>
             </div>
 
         </div>
@@ -83,36 +81,97 @@
     <div class="opis">
         <h2>ОПИС</h2>
         <p >Чорниці - це справжні скарби лісів! Цей джем має насичений смак чорниць, який може дати вам відчуття свіжості та енергії.
-            Він створений зі свіжих чорниць, які дають йому приємний фруктовий аромат.<p>
+            Він створений зі свіжих чорниць, які дають йому приємний фруктовий аромат.</p>
     </div>
 
     <div class="feedback">
         <h2>Сподобалось? Поділися враженнями з іншими!</h2>
-        <p>Відгуки: 0</p>
+        <p>Відгуки: <?php echo $total_reviews; ?></p>
         <div class="rating2">
             <p>Оцінка:</p>
             <div class="stars2">
-                <span class="star2">&#9734;</span>
-                <span class="star2">&#9734;</span>
-                <span class="star2">&#9734;</span>
-                <span class="star2">&#9734;</span>
-                <span class="star2">&#9734;</span>
+                <span class="star2" data-rating="1">&#9734;</span>
+                <span class="star2" data-rating="2">&#9734;</span>
+                <span class="star2" data-rating="3">&#9734;</span>
+                <span class="star2" data-rating="4">&#9734;</span>
+                <span class="star2" data-rating="5">&#9734;</span>
             </div>
         </div>
-        <input type="text" placeholder="Як до Вас звертатися?">
-        <input type="text" placeholder="Напишіть Ваш відгук про товар...">
-        <div class="button-container">
-            <button class="ok">OK</button>
+
+        <div>
+            <div>
+                <form action="" method="POST">
+                    @csrf
+                    <input type="text" name="name" placeholder="Як до Вас звертатися?">
+                    <input type="text" name="comment" placeholder="Напишіть Ваш відгук про товар...">
+                    <input type="hidden" name="rating" id="rating" value="0" required>
+                    <div class="button-container">
+                        <button class="ok" type="submit">OK</button>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+            <div class="vidhuky">
+                @if(count($comments) > 0)
+                    @foreach($comments as $com)
+                        <div class="comment">
+                            <div class="comment-header">
+                                <p class="comment-name">{{ $com['name'] }}</p>
+                                <p class="comment-rating">
+                                    @for ($i = 1; $i <= $com['rating']; $i++)
+                                        &#9733;
+                                    @endfor
+                                    @for ($i = $com['rating'] + 1; $i <= 5; $i++)
+                                        &#9734;
+                                    @endfor
+                                </p>
+                            </div>
+                            <div class="comment-text">{{ $com['comment'] }}</div>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Пока отзывов нет</p>
+                @endif
+            </div>
+
         </div>
-        <div class="vidhuky">
-            <p>Поки що відгуки відсутні</p>
-        </div>
+
     </div>
 
-</div>
 
 
-<footer class="footer">
+
+    <!--   Фиксация анимации и рейтинга-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star2');
+            const ratingInput = document.getElementById('rating');
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    const rating = 5 - parseInt(star.dataset.rating) + 1;
+                    ratingInput.value = rating;
+
+                    stars.forEach((s, i) => {
+                        if (i >= index) {
+                            s.classList.add('selected');
+                            s.innerHTML = '&#9733;';
+                        } else {
+                            s.classList.remove('selected');
+                            s.innerHTML = '&#9734;';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+    <footer class="footer">
     <div class="container4">
         <div class="row-1">
             <p><img src="np.svg">Доставка новою поштою від 50 грн</p>

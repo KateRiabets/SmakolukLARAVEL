@@ -34,13 +34,14 @@ class ProductController extends Controller
         $output = '';
         for ($i = 1; $i <= 5; $i++) {
             if ($rating >= $i) {
-                $output .= '<i class="star-filled">★</i>';
+                $output .= '<span class="star">&#9733;</span>';  // solid star
             } else {
-                $output .= '<i class="star-empty">☆</i>';
+                $output .= '<span class="star">&#9734;</span>';  // empty star
             }
         }
         return $output;
     }
+
 
     public function store(Request $request, $product)
     {

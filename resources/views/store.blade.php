@@ -63,11 +63,13 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('apricot');  ?>
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
+
+
                         </div>
                         <img src="banki/apricot.png">
                         <h3>Абрикосовий джем</h3>
@@ -79,11 +81,13 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('aiva');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
+
                         </div>
                         <img src="banki/aiv.png">
                         <h3>Айвовий джем</h3>
@@ -96,11 +100,13 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('peach');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
+
                         </div>
                         <img src="banki/pea.png">
                         <h3>Персиковий джем</h3>
@@ -112,11 +118,13 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('pumpkin');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
+
                         </div>
                         <img src="banki/pump.png">
                         <h3>Ґарбузовий джем</h3>
@@ -128,11 +136,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('pear');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/pr.png">
                         <h3>Грушевий джем</h3>
@@ -145,11 +154,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('lemon');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/lem.png">
                         <h3>Лимонний джем</h3>
@@ -161,11 +171,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('mandarin');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/mandaryn.png">
                         <h3>Мандариновий джем</h3>
@@ -177,11 +188,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+
+                            $productData = $productController->show('apple');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/yabloko.png">
                         <h3>Яблучний джем</h3>
@@ -195,11 +207,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('plum');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/slyva.png">
                         <h3>Сливовий джем</h3>
@@ -212,11 +225,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+
+                            $productData = $productController->show('raspberry');  ?>
+
+                            <span class="average-rating"><?php echo $productData['average_rating']; ?> </span>
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/mal.png">
                         <h3>Малиновий джем</h3>
@@ -229,11 +243,12 @@
                 <div class="column_store">
                     <div class="card_store">
                         <div class="rating">
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
-                            <span class="star">&#9733;</span>
+                            <?php
+                            $productController = new \App\Http\Controllers\ProductController();
+                            $productData = $productController->show('blueberry');  ?>
+
+
+                            <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/chornytsia.png">
                         <h3>Чорничний джем</h3>
