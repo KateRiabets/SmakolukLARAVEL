@@ -34,9 +34,9 @@ class ProductController extends Controller
         $output = '';
         for ($i = 1; $i <= 5; $i++) {
             if ($rating >= $i) {
-                $output .= '<span class="star">&#9733;</span>';  // solid star
+                $output .= '<span class="star">&#9733;</span>';  // зірка
             } else {
-                $output .= '<span class="star">&#9734;</span>';  // empty star
+                $output .= '<span class="star">&#9734;</span>';  // порожня зірка
             }
         }
         return $output;
@@ -45,14 +45,14 @@ class ProductController extends Controller
 
     public function store(Request $request, $product)
     {
-        // Проверяем входные данные на соответствие набору правил
+        // перевірка
         $validated = $request->validate([
             'name' => 'required|max:255',
             'comment' => 'required',
             'rating' => 'required|numeric|between:1,5',
         ]);
 
-        // Сохраняем комментарий в файле
+        // збереження коментаря у файл
         $commentsPath = app_path("comments/{$product} comments.json");
         $comments = file_exists($commentsPath) ? json_decode(file_get_contents($commentsPath), true) : [];
         if ($comments === null) {
@@ -61,7 +61,7 @@ class ProductController extends Controller
         array_push($comments, $validated);
         file_put_contents($commentsPath, json_encode($comments, JSON_PRETTY_PRINT));
 
-        // Перенаправляем пользователя обратно на страницу товара
+        // назад на сторінку товара
         return back()->with('success', 'Ваш комментарий был успешно добавлен!');
     }
 

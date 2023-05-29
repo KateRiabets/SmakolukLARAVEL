@@ -167,7 +167,7 @@
 
 
 
-<!--   Фиксация анимации и рейтинга-->
+<!--   Фіксація анімацій та рейтингу-->
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

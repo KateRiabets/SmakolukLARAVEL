@@ -62,6 +62,8 @@
                 </a>
             </li>
 
+
+{{--            лічильник--}}
             <script>
                 window.onload = function() {
                     fetch('/cart-counter')
@@ -173,7 +175,7 @@
 
 
 
-    <!--   Фиксация анимации и рейтинга-->
+    <!--   Фіксація анімацій та рейтингу-->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -252,7 +254,7 @@
     </div>
 </footer>
 
-
+</div>
 </body>
 
 

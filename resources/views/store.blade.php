@@ -100,10 +100,7 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('aiva');  ?>
-
-
                             <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
 
                         </div>
@@ -119,10 +116,7 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('peach');  ?>
-
-
                             <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
 
                         </div>
@@ -137,7 +131,6 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('pumpkin');  ?>
 
 
@@ -155,7 +148,6 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('pear');  ?>
 
 
@@ -173,7 +165,6 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('lemon');  ?>
 
 
@@ -190,7 +181,6 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('mandarin');  ?>
 
 
@@ -226,9 +216,7 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('plum');  ?>
-
 
                             <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
@@ -247,7 +235,7 @@
 
                             $productData = $productController->show('raspberry');  ?>
 
-                            <span class="average-rating"><?php echo $productData['average_rating']; ?> </span>
+
                             <span class="rating-stars"><?php echo $productData['stars']; ?> </span>
                         </div>
                         <img src="banki/mal.png">
@@ -262,7 +250,6 @@
                     <div class="card_store">
                         <div class="rating">
                             <?php
-                            $productController = new \App\Http\Controllers\ProductController();
                             $productData = $productController->show('blueberry');  ?>
 
 

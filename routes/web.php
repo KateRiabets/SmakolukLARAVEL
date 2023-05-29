@@ -24,14 +24,7 @@ Route::middleware(['web'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::post('/increase-quantity/{product}', [CartController::class, 'increase'])->name('increase-quantity');
     Route::post('/decrease-quantity/{product}', [CartController::class, 'decrease'])->name('decrease-quantity');
-
-
     Route::get('/cart-counter', [ProductController::class, 'CartCounter'])->name('cart.counter');
-
-
-    // Move these routes after the more specific routes
-
-
     Route::get('/{product}', [ProductController::class, 'show'])->name('product.show');
     Route::post('/{product}', [ProductController::class, 'store'])->name('product.store');
     Route::get('/{product}/comments', [CommentController::class, 'index'])->name('product.comments');
