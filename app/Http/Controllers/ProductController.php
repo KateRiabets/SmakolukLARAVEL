@@ -65,4 +65,15 @@ class ProductController extends Controller
         return back()->with('success', 'Ваш комментарий был успешно добавлен!');
     }
 
+
+
+    public function CartCounter(Request $request) {
+        $cart = json_decode($request->cookie('cart'), true) ?? [];
+        $totalItems = array_sum($cart);
+
+        return response()->json(['totalItems' => $totalItems]);
+    }
+
+
+
 }

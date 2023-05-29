@@ -26,6 +26,9 @@
     height: 40%;
 }
 
+
+
+
 .order_table th, .order_table td {
     border: 1px solid #324028;
     border-width: 0 0 1px 0;
@@ -37,6 +40,7 @@
 .order_table img {
     max-width: 40%;
 }
+
 
 .counter {
     display: flex;
@@ -83,13 +87,13 @@
 .counter .plus {
     font-size: 15px;
     top: -20px;
-    margin-top: -5px;
+    margin-top: 5px;
 }
 
 .counter .minus {
     font-size: 15px;
     bottom: -20px;
-    margin-bottom: -5px;
+    margin-bottom: 5px;
 }
 
 .total_price {
@@ -145,7 +149,7 @@
 }
 
 .button_order {
-    margin-left:230px;
+    margin-left:0px;
     border: 2px solid #324028;
     color: #324028;
     font-size: 20px;
@@ -162,4 +166,19 @@
 .button_order:hover {
     background-color: #324028;
     color: #D9D1C7;
+}
+
+
+.remove-product {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+}
+
+.remove-product img {
+    display: block;
+    width: 30%;
+    height: auto;
 }

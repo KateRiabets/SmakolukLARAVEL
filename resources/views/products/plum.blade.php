@@ -32,7 +32,7 @@
             <li><a class="menu_green__item" href="contacts">Контакти</a></li>
             <li><a class="menu_green__item" href="why">Чому ми?</a></li>
             <li><a class="menu_green__item" href="#">Обране</a></li>
-            <li><a class="menu_green__item" href="#">Кошик</a></li>
+            <li><a class="menu_green__item" href="cart">Кошик</a></li>
         </ul>
     </div>
 
@@ -54,9 +54,27 @@
             <li><a href="contacts">Контакти</a></li>
             <li><a href="why">Чому ми?</a></li>
             <li class="menu-icons"><img src="heartG.svg"></li>
-            <li class="menu-icons"><img src="bagG.svg"></li>
+
+            <li>
+                <a href="cart" class="menu-icons" style="text-decoration: none;">
+                    <span id="cart-counter" class="cart-counter">0</span>
+                    <img src="bagG.svg">
+                </a>
+            </li>
+
+            <script>
+                window.onload = function() {
+                    fetch('/cart-counter')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('cart-counter').textContent = data.totalItems;
+                        });
+                }
+            </script>
+
         </ul>
     </nav>
+
     <div class="container_tovar">
         <div class="tovar_image">
             <img src="banki/swaliva_d.png">
@@ -65,7 +83,12 @@
             <h1>СЛИВОВИЙ ДЖЕМ</h1>
             <img class="mobile-img-tovar" src="banki/swaliva.png">
             <h3>100 грн</h3>
-            <a href="#" class="button_add">ДОДАТИ ДО КОШИКА</a>
+
+            <form method="POST" action="{{ route('add-to-cart', ['product' => 'plum']) }}">
+                @csrf
+                <button type="submit" class="button_add">ДОДАТИ ДО КОШИКА</button>
+            </form>
+
             <div class="tovar_rating-p">
                 <div class="tovar_rating">
                     <span class="average-rating"><?php echo $average_rating; ?> </span>

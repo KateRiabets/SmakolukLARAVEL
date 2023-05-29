@@ -31,7 +31,7 @@
             <li><a class="menu_green__item" href="contacts">Контакти</a></li>
             <li><a class="menu_green__item" href="why">Чому ми?</a></li>
             <li><a class="menu_green__item" href="#">Обране</a></li>
-            <li><a class="menu_green__item" href="#">Кошик</a></li>
+            <li><a class="menu_green__item" href="cart">Кошик</a></li>
         </ul>
     </div>
 
@@ -53,9 +53,27 @@
             <li><a href="contacts">Контакти</a></li>
             <li><a href="why">Чому ми?</a></li>
             <li class="menu-icons"><img src="heartG.svg"></li>
-            <li class="menu-icons"><img src="bagG.svg"></li>
+
+            <li>
+                <a href="cart" class="menu-icons" style="text-decoration: none;">
+                    <span id="cart-counter" class="cart-counter">0</span>
+                    <img src="bagG.svg">
+                </a>
+            </li>
+
+            <script>
+                window.onload = function() {
+                    fetch('/cart-counter')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('cart-counter').textContent = data.totalItems;
+                        });
+                }
+            </script>
+
         </ul>
     </nav>
+
     <div class="container_store">
         <h1>Наші джеми</h1>
         <div class="row_store">

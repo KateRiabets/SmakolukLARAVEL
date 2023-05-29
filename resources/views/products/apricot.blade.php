@@ -35,7 +35,7 @@
             <li><a class="menu_green__item" href="#">Контакти</a></li>
             <li><a class="menu_green__item" href="why">Чому ми?</a></li>
             <li><a class="menu_green__item" href="#">Обране</a></li>
-            <li><a class="menu_green__item" href="#">Кошик</a></li>
+            <li><a class="menu_green__item" href="cart">Кошик</a></li>
         </ul>
     </div>
 
@@ -50,16 +50,40 @@
             <li><a href="#"><img src="tgG.svg"></a></li>
         </ul>
     </nav>
+
+
+
+
     <nav class="menu-2_green">
         <ul>
             <li class = "logo-in-menu_green"><img src="logogreen.png" width = "220px" height="80px"></li>
             <li><a href="store">Магазин</a></li>
-            <li><a href="#">Контакти</a></li>
+            <li><a href="contacts">Контакти</a></li>
             <li><a href="why">Чому ми?</a></li>
             <li class="menu-icons"><img src="heartG.svg"></li>
-            <li class="menu-icons"><img src="bagG.svg"></li>
+
+            <li>
+                <a href="cart" class="menu-icons" style="text-decoration: none;">
+                    <span id="cart-counter" class="cart-counter">0</span>
+                    <img src="bagG.svg">
+                </a>
+            </li>
+
+            <script>
+                window.onload = function() {
+                    fetch('/cart-counter')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('cart-counter').textContent = data.totalItems;
+                        });
+                }
+            </script>
+
         </ul>
     </nav>
+
+
+
     <div class="container_tovar">
         <div class="tovar_image">
             <img src="banki/swapr.png">
@@ -68,8 +92,19 @@
             <h1>АБРИКОСОВИЙ ДЖЕМ</h1>
             <img class="mobile-img-tovar" src="banki/swapr_mobile.png">
             <h3>130 грн</h3>
-            <a href="#" class="button_add">ДОДАТИ ДО КОШИКА</a>
+
+            <form method="POST" action="{{ route('add-to-cart', ['product' => 'apricot']) }}">
+                @csrf
+                <button type="submit" class="button_add">ДОДАТИ ДО КОШИКА</button>
+            </form>
+
+
+
+
+
+
             <div class="tovar_rating-p">
+
                 <div class="tovar_rating">
                     <span class="average-rating"><?php echo $average_rating; ?> </span>
                     <span class="rating-stars"><?php echo $stars; ?></span>
