@@ -118,7 +118,7 @@ class CartController extends Controller
         return $totalPrice;
     }
 
-    public function show()//виведення
+    public function show(Request $request)//виведення
     {
         $cart = json_decode($request->cookie('cart'), true) ?? [];
 
